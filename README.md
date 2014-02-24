@@ -84,3 +84,19 @@ curl 'https://idobata.io/api/messages?room_id=ROOM_ID' -H "X-API-Token: YOUR_BOT
 ```
 curl 'https://idobata.io/api/messages?older_than=MESSAGE_ID' -H "X-API-Token: YOUR_BOT_TOKEN"
 ```
+
+### BotがBotつくるAPI
+#### エンドポイントURL
+https://idobata.io/api/bots
+
+#### パラメータ
+| name                 | description                           |
+| -------------------- | ------------------------------------- |
+| bot[name]            | Botの名前                             |
+| bot[organization_id] | <del>Bot国のID</del>Organization ID   |
+
+#### 例
+**BotからBotをつくろう**
+```
+curl 'https://idobata.io/api/bots' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' --data 'bot%5Bname%5D=CHILD_BOT_NAME&bot%5Borganization_id%5D=YOUR_ORGANIZATION_ID' -H "X-API-Token: YOUR_API_TOKEN"
+```
