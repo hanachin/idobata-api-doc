@@ -42,4 +42,45 @@ curl --data-urlencode "source=<b>hi</b>" -d format=html https://idobata.io/hook/
 
 Bot
 ---
-あとで書くかもしれない書かないかもしれない
+基本的に人間が出来ることはなんでも出来ると考えている。
+
+認証はリクエストヘッダーに`X-API-Token`というヘッダをつければよい。
+
+### メッセージ見るAPI
+Botが入っている部屋に送られてきたメッセージを取得することが出来る。
+
+#### エンドポイントURL
+https://idobata.io/api/messages/
+
+#### パラメータ
+| name       | description                                                        |
+| ---------- | ------------------------------------------------------------------ |
+| ids[]      | 取得するメッセージの Message ID(optional)                          |
+| room_id    | メッセージを取得したい部屋のRoom ID(optional)                      |
+| older_than | このMessage IDより古いメッセージを取得したいとき指定する(optional) |
+
+#### 例
+**特定のメッセージを指定せず、最新のメッセージを見る**
+```
+curl 'https://idobata.io/api/messages' -H "X-API-Token: YOUR_BOT_TOKEN"
+```
+
+**特定のメッセージを指定して見る**
+```
+curl 'https://idobata.io/api/messages?ids%5B%5D=MESSAGE_ID' -H "X-API-Token: YOUR_BOT_TOKEN"
+```
+
+**特定のメッセージを複数指定して見る**
+```
+curl 'https://idobata.io/api/messages?ids%5B%5D=MESSAGE_ID&ids%5B%5D=MESSAGE_ID' -H "X-API-Token: YOUR_BOT_TOKEN"
+```
+
+**特定の部屋のメッセージを見る**
+```
+curl 'https://idobata.io/api/messages?room_id=ROOM_ID' -H "X-API-Token: YOUR_BOT_TOKEN"
+```
+
+**特定のメッセージより古いメッセージを見る**
+```
+curl 'https://idobata.io/api/messages?older_than=MESSAGE_ID' -H "X-API-Token: YOUR_BOT_TOKEN"
+```
