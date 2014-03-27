@@ -12,14 +12,30 @@ Idobataには大きく分けて2つのAPIがあると考えています。
 Hook APIは、部屋に発言を書き込むのみ、主に通知を投稿することしかできません。
 Bot APIの方は~~Bot APIからBotを作ることができるBotのためのAPIです~~、部屋の投稿内容を見たり、どの部屋に誰が居るか確認したり、Hook APIと違って人間の操作と同じようなことがだいたい出来るんじゃないかな :smiling_imp:
 
-Hook
+Hook (Generic)
 ----
-Hook APIを使うと、IdobataのチャットにHookからを書き込むことが出来ます。
+Hook API (`Add a Hook -> Generic`) を使うと、IdobataのチャットにHookからを書き込むことが出来ます。
 
 ### エンドポイントURL
 https://idobata.io/hook/YOUR_HOOK_TOKEN
 
 YOUR_HOOK_TOKENの部分にはあなたのHook用のトークンが入ります。
+
+### 使い方 (公式)
+
+````
+Usage
+You can post a message with source parameter like below:
+
+$ curl --data-urlencode "source=hello, world" https://idobata.io/hook/YOUR_HOOK_TOKEN
+You can also use HTML format:
+
+$ curl --data-urlencode "source=<h1>hi</h1>" -d format=html https://idobata.io/hook/YOUR_HOOK_TOKEN
+
+Additionally, you can post image with image parameter:
+
+$ curl --form image=@/path/to/image.png https://idobata.io/hook/YOUR_HOOK_TOKEN5
+```
 
 ### パラメータ
 
