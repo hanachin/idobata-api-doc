@@ -12,6 +12,11 @@ Idobataには大きく分けて2つのAPIがあると考えています。
 Hook APIは、部屋に発言を書き込むのみ、主に通知を投稿することしかできません。
 Bot APIの方は~~Bot APIからBotを作ることができるBotのためのAPIです~~、部屋の投稿内容を見たり、どの部屋に誰が居るか確認したり、Hook APIと違って人間の操作と同じようなことがだいたい出来るんじゃないかな :smiling_imp:
 
+Libraries
+---
+- [asonas/idobata-ruby](https://github.com/asonas/idobata-ruby)
+- [uPhyca/idobata4j](https://github.com/uPhyca/idobata4j)
+
 Hook (Generic)
 ----
 Hook API (`Add a Hook -> Generic`) を使うと、IdobataのチャットにHookからを書き込むことが出来ます。
@@ -61,6 +66,13 @@ Bot
 基本的に人間が出来ることはなんでも出来ると考えている。
 
 認証はリクエストヘッダーに`X-API-Token`というヘッダをつければよい。
+
+Idobataでは、チャットのデータをリアルタイムでやりとりするためにPusherをつかっている。
+Pusherへの接続方法について、ドキュメントはないが以下のような実装がある。参考にされたし。
+
+- [fukayatsu/lita-idobata](https://github.com/fukayatsu/lita-idobata)
+- [hanachin/ellen-idobata](https://github.com/hanachin/ellen-idobata)
+- [idobata/hubot-idobata](https://github.com/idobata/hubot-idobata)
 
 ### メッセージ見るAPI
 Botが入っている部屋に送られてきたメッセージを取得することが出来る。
