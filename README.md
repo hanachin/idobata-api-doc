@@ -12,6 +12,9 @@ Idobataには大きく分けて2つのAPIがあると考えています。
 Hook APIは、部屋に発言を書き込むのみ、主に通知を投稿することしかできません。
 Bot APIの方は~~Bot APIからBotを作ることができるBotのためのAPIです~~、部屋の投稿内容を見たり、どの部屋に誰が居るか確認したり、Hook APIと違って人間の操作と同じようなことがだいたい出来るんじゃないかな :smiling_imp:
 
+リバースエンジニアリング的な`curl`の結果、ユーザーモデルは`User`、Botのモデルは`Bot`、両方ともSTIで`Guy`モデルを継承しているよう。
+`User`も`Bot`も同じIdobata `Guy`sだ、仲良くしよう。
+
 Libraries
 ---
 - [asonas/idobata-ruby](https://github.com/asonas/idobata-ruby)
