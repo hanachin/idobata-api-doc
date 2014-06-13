@@ -74,7 +74,7 @@ Idobataでは、チャットのデータをリアルタイムでやりとりす�
 Pusherへの接続方法について、ドキュメントはないが以下のような実装がある。参考にされたし。
 
 - [fukayatsu/lita-idobata](https://github.com/fukayatsu/lita-idobata)
-- [hanachin/ellen-idobata](https://github.com/hanachin/ellen-idobata)
+- [hanachin/ruboty-idobata](https://github.com/hanachin/ruboty-idobata)
 - [idobata/hubot-idobata](https://github.com/idobata/hubot-idobata)
 
 ### メッセージ見るAPI
