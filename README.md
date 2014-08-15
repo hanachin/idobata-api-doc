@@ -17,8 +17,10 @@ Bot APIの方は~~Bot APIからBotを作ることができるBotのためのAPI�
 
 Libraries
 ---
-- [asonas/idobata-ruby](https://github.com/asonas/idobata-ruby)
+- [asonas/idobata-ruby](https://github.com/asonas/idobata-ruby) hook api client
+- [fukayatsu/idobata_hook](https://github.com/fukayatsu/idobata_hook) hook api client
 - [uPhyca/idobata4j](https://github.com/uPhyca/idobata4j)
+- [hanachin/atabodi](https://github.com/hanachin/atabodi) user/bot api client :warning:very wip
 
 Hook (Generic)
 ----
