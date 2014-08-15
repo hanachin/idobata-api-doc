@@ -66,6 +66,26 @@ curl --data-urlencode "source=hi" https://idobata.io/hook/YOUR_HOOK_TOKEN
 curl --data-urlencode "source=<b>hi</b>" -d format=html https://idobata.io/hook/YOUR_HOOK_TOKEN
 ```
 
+User
+---
+ユーザーとしてAPIを操作するためには、ログインIDとパスワードを使ってBASIC認証をかけましょう。
+基本的にBot APIとユーザーAPIのエンドポイントとパラメータは同一です。
+
+ユーザーのみしか操作できないリソースは、エンドポイントのURLが
+`https://idobata.io/api/user`からはじまります。
+
+### 全ての部屋のメッセージを既読にするAPI
+```
+curl https://idobata.io/api/user/rooms/touch --basic --user 'YOUR_ID:YOUR_PASSWORD' -H 'Content-Type: application/json' -X POST
+```
+
+### 部屋のメッセージを既読にするAPI
+URL中で部屋の`room_id`を指定します。
+
+```
+curl https://idobata.io/api/user/rooms/YOUR_ROOM_ID/touch --basic --user 'YOUR_ID:YOUR_PASSWORD' -H 'Content-Type: application/json' -X POST
+```
+
 Bot
 ---
 基本的に人間が出来ることはなんでも出来ると考えている。
