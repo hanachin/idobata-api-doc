@@ -74,13 +74,22 @@ User
 ユーザーのみしか操作できないリソースは、エンドポイントのURLが
 `https://idobata.io/api/user`からはじまります。
 
+:warning: `/api/user`以下はBASIC認証では操作できなさそうです。(2014/8/17時点)
+
 ### 全ての部屋のメッセージを既読にするAPI
+
+
+:warning: このcURL動きません
+
 ```
 curl https://idobata.io/api/user/rooms/touch --basic --user 'YOUR_ID:YOUR_PASSWORD' -H 'Content-Type: application/json' -X POST
 ```
 
+
 ### 部屋のメッセージを既読にするAPI
 URL中で部屋の`room_id`を指定します。
+
+:warning: このcURL動きません
 
 ```
 curl https://idobata.io/api/user/rooms/YOUR_ROOM_ID/touch --basic --user 'YOUR_ID:YOUR_PASSWORD' -H 'Content-Type: application/json' -X POST
