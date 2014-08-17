@@ -78,9 +78,6 @@ User
 
 ### 全ての部屋のメッセージを既読にするAPI
 
-
-:warning: このcURL動きません
-
 ```
 curl https://idobata.io/api/user/rooms/touch --basic --user 'YOUR_ID:YOUR_PASSWORD' -H 'Content-Type: application/json' -X POST
 ```
